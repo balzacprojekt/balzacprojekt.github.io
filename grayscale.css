@@ -1,0 +1,83 @@
+body, html {
+    font-family: 'Libre Baskerville', serif;
+    padding: 0;
+    margin: 0;
+}
+.layer {
+    position: relative;
+    width: 40%;
+    float: right;
+    background-color: #ffffff;
+    margin-top:0;
+    padding:8% 5%;
+    opacity: 0.8;
+    color: #000000;
+}
+
+.parallax-window {
+    background: transparent;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.text2 {
+    padding: 8% 0;
+}
+
+/* HIDE */
+.hideme {
+    opacity: 0;
+}
+
+/* TYPING EFFECT */
+.typewriter h1 {
+  color: #000;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+/* GALERY */
+
+article, aside, figure, footer, header, hgroup,
+menu, nav, section { display: block; }
+
+#page-wrap { width: 960px; margin: 40px auto; position: relative; }
+
+#page-wrap h1 {
+	color: #ccc;
+	font: bold 36px Sans-Serif;
+	margin: 0 0 5px 0;
+	letter-spacing: -1px;
+}
+
+#page-wrap p {
+color: #eee;
+	font: 16px/1.4 Sans-Serif;
+}
+#page-wrap p + p {
+	margin: 0 0 20px 0; 
+}
+
+#page-wrap a {
+	background: #21e9e7;
+	color: #333;
+	font-weight: bold;
+	padding: 3px 5px 2px 5px;
+	border-radius: 5px;
+	margin: 2px 0;
+	text-decoration: none;
+}
