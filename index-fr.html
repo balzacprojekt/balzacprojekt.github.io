@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Balzac - Le chef-d’oeuvre inconnu </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link href="css/grayscale.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+		.grid {
+			width: 977px;
+			height: 506px;
+			overflow: hidden;
+			position: relative;
+			-webkit-transform: translate3d(0,0,0); /* smoothness */
+		}
+		.grid > div, .blink {
+			position: absolute;
+			width: 338px;
+			height: 165px;
+      -webkit-transition: all 0.3s ease-out;  
+      -moz-transition:    all 0.3s ease-out;  
+      -ms-transition:     all 0.3s ease-out;  
+      -o-transition:      all 0.3s ease-out; 
+      transition:         all 0.3s ease-out; 
+      cursor: pointer; 
+		}
+		.a {
+			left: 0;
+		}
+		.b {
+			left: 350px
+		}
+		.one {
+			top: 0;
+		}
+		.two {
+			top: 175px;
+		}
+		.a1 { background: url(img/a1.jpg) 0      0       no-repeat; }
+		.a2 { background: url(img/a2.jpg) 0      -175px  no-repeat; }
+		.b1 { background: url(img/b1.jpg) -350px 0       no-repeat; }
+		.b2 { background: url(img/b2.jpg) -350px -175px  no-repeat; }
+		
+		.grid > div.active {
+			width: 977px;
+			height: 506px;
+			top: 0;
+			left: 0;
+			background-position: 0 0;
+			z-index: 1;
+		}
+	
+		.blink {
+			background: white;
+			opacity: 0;
+			text-indent: -9999px;
+			z-index: -1;
+		}
+		.blink-one {
+			left: 700px;
+			top: 0;
+			-webkit-animation: flash 1s 3s 1 linear forwards;
+			-moz-animation: flash 1s 3s 1 linear forwards;
+			-ms-animation: flash 1s 3s 1 linear forwards;
+			-o-animation: flash 1s 3s 1 linear forwards;
+		}
+		.blink-two {
+			left: 350px;
+			top: 175px;
+			-webkit-animation: flash 1s 4.3s 1 linear forwards;
+			-moz-animation: flash 1s 4.3s 1 linear forwards;
+			-ms-animation: flash 1s 4.3s 1 linear forwards;
+			-o-animation: flash 1s 4.3s 1 linear forwards;
+		}
+		.blink-three {
+			left: 0;
+			top: 0;
+			-webkit-animation: flash 1s 5.8s 1 linear forwards;
+			-moz-animation: flash 1s 5.8s 1 linear forwards;
+			-ms-animation: flash 1s 5.8s 1 linear forwards;
+			-o-animation: flash 1s 5.8s 1 linear forwards;
+		}
+		
+		@-webkit-keyframes flash { 
+		  0%   { -webkit-transform: scale(1);   opacity: 0.8; }
+		  99%  { -webkit-transform: scale(1.6); opacity: 0;   }
+		  100% { z-index: -1; }
+		}
+		/* Firefox requires z-index to be declared in all keyframes */
+		@-moz-keyframes flash {
+		  0%   { -moz-transform: scale(1);   opacity: 0.8; z-index: 100; }
+		  99%  { -moz-transform: scale(1.6); opacity: 0;   z-index: 100; }
+		  100% { z-index: -1; }
+		}
+		@-ms-keyframes flash { 
+		  0%   { -ms-transform: scale(1);   opacity: 0.8; }
+		  99%  { -ms-transform: scale(1.6); opacity: 0;   }
+		  100% { z-index: -1; }
+		}
+		@-o-keyframes flash { 
+		  0%   { -o-transform: scale(1);   opacity: 0.8; }
+		  99%  { -o-transform: scale(1.6); opacity: 0;   }
+		  100% { z-index: -1; }
+		}
+	
+	</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+		$(function() {
+			
+			$all = $(".grid > div");
+			
+			var zindex = 2;
+			
+			$all.click(function() {
+			
+				$(this)
+					.css("z-index", zindex)
+					.toggleClass("active");
+					
+				zindex++;
+			
+			});
+						
+		});
+	
+	</script>
+
+</head>
+    <nav>
+        <a class="btn-outline-primary float-right mr-5 mt-4" href="index.html">HU</a>
+    </nav>
+
+<body>
+<header>
+    <section class="mb-5">
+        <div class="container-fluid mb-5">   
+                <div class="offset-4 col-s8-m5-l5 py-5 typewriter center">
+                    <h1 class="my-5">Le chef-d’oeuvre inconnu</h1>
+                </div>  
+        </div>
+    </section>
+</header> 
+    <div id="page-wrap" class="text-center">
+		<div class="grid ">
+			<div class="a one a1"></div>
+			<div class="a two a2"></div>
+			<div class="a three a3"></div>
+			
+			<div class="b one b1"></div>
+			<div class="b two b2"></div>
+            <div class="b three b3"></div>
+		</div>
+	</div>
+<section>
+    <div class="container-fluid mt-5">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="img/paris_25.jpg">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="layer paper">
+                        <p>Vers la fin de l’année 1612, par une froide matinée de décembre, un jeune homme dont le vêtement était de très mince apparence, se promenait devant la porte d’une maison située rue des Grands-Augustins, à Paris. Après avoir assez longtemps marché dans cette rue avec l’irrésolution d’un amant qui n’ose se présenter chez sa première maîtresse, quelque facile qu’elle soit, il finit par franchir le seuil de cette porte, et demanda si maître François PORBUS était en son logis. Sur la réponse affirmative que lui fit une vieille femme occupée à balayer une salle basse, le jeune homme monta lentement les degrés, et s’arrêta de marche en marche, comme quelque courtisan de fraîche date, inquiet de l’accueil que le roi va lui faire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>    
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12 text2">
+            <p>Quand il parvint en haut de la vis, il demeura pendant un moment sur le palier, incertain s’il prendrait le heurtoir grotesque qui ornait la porte de l’atelier où travaillait sans doute le peintre de Henri IV délaissé pour Rubens par Marie de Médicis. Le jeune homme éprouvait cette sensation profonde qui a dû faire vibrer le coeur des grands artistes quand, au fort de la jeunesse et de leur amour pour l’art, ils ont abordé un homme de génie ou quelque chef-d’oeuvre. Il existe dans tous les sentiments humains une fleur primitive, engendrée par un noble enthousiasme qui va toujours faiblissant jusqu’à ce que le bonheur ne soit plus qu’un souvenir et la gloire un mensonge. Parmi ces émotions fragiles, rien ne ressemble à l’amour comme la jeune passion d’un artiste commençant le délicieux supplice de sa destinée de gloire et de malheur, passion pleine d’audace et de timidité, de croyances vagues et de découragements certains. À celui qui léger d’argent, qui adolescent de génie, n’a pas vivement palpité en se présentant devant un maître, il manquera toujours une corde dans le coeur, je ne sais quelle touche de pinceau, un sentiment dans l’oeuvre, une certaine expression de poésie. Si quelques fanfarons bouffis d’eux-mêmes croient trop tôt à l’avenir, ils ne sont gens d’esprit que pour les sots. À ce compte, le jeune inconnu paraissait avoir un vrai mérite, si le talent doit se mesurer sur cette timidité première, sur cette pudeur indéfinissable que les gens promis à la gloire savent perdre dans l’exercice de leur art, comme les jolies femmes perdent la leur dans le manège de la coquetterie. L’habitude du triomphe amoindrit le doute, et la pudeur est un doute peut-être. Accablé de misère et surpris en ce moment de son outrecuidance, le pauvre néophyte ne serait pas entré chez le peintre auquel nous devons l’admirable portrait de Henri IV, sans un secours extraordinaire que lui envoya le hasard.</p>
+            </div>
+        </div>
+    </div>
+        <div class="container-fluid">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="img/portrait.svg">
+            <div class="row">
+                <div class="col s6 m6 l6">
+                    <div class="layer">
+                        <p>Un vieillard vint à monter l’escalier. À la bizarrerie de son costume, à la magnificence de son rabat de dentelle, à la prépondérante sécurité de sa démarche, le jeune homme devina dans ce personnage ou le protecteur ou l’ami du peintre ; il se recula sur le palier pour lui faire place, et l’examina curieusement, espérant trouver en lui la bonne nature d’un artiste ou le caractère serviable des gens qui aiment les arts ; mais il aperçut quelque chose de diabolique dans cette figure, et surtout ce je ne sais quoi qui affriande les artistes. Imaginez un front chauve, bombé, proéminent, retombant en saillie sur un petit nez écrasé, retroussé du bout comme celui de Rabelais ou de Socrate ; une bouche rieuse et ridée, un menton court, fièrement relevé, garni d’une barbe grise taillée en pointe, des yeux vert de mer ternis en apparence par l’âge, mais qui par le contraste du blanc nacré dans lequel flottait la prunelle devaient parfois jeter des regards magnétiques au fort de la colère ou de l’enthousiasme. Le visage était d’ailleurs singulièrement flétri par les fatigues de l’âge, et plus encore par ces pensées qui creusent également l’âme et le corps. Les yeux n’avaient plus de cils, et à peine voyait-on quelques traces de sourcils au-dessus de leurs arcades saillantes. Mettez cette tête sur un corps fluet et débile, entourez-la d’une dentelle étincelante de blancheur et travaillée comme une truelle à poisson, jetez sur le pourpoint noir du vieillard une lourde chaîne d’or, et vous aurez une image imparfaite de ce personnage auquel le jour faible de l’escalier prêtait encore une couleur fantastique. Vous eussiez dit d’une toile de Rembrandt marchant silencieusement et sans cadre dans la noire atmosphère que s’est appropriée ce grand peintre.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer class="bg-black small text-center text-white-50">
+</footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/parallax.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="js/grayscale.min.js"></script>
+</body>
+</html>
