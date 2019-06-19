@@ -13,6 +13,13 @@ body, html {
     opacity: 0.8;
     color: #000000;
 }
+a {
+    font-size: 18px;
+    padding:3px;
+}
+a:hover {
+    text-decoration: none;
+}
 
 .parallax-window {
     background: transparent;
@@ -22,11 +29,6 @@ body, html {
 }
 .text2 {
     padding: 8% 0;
-}
-
-/* HIDE */
-.hideme {
-    opacity: 0;
 }
 
 /* TYPING EFFECT */
