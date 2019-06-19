@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Balzac - Az ismeretlen remekmű</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link href="css/grayscale.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+		.grid {
+			width: 977px;
+			height: 506px;
+			overflow: hidden;
+			position: relative;
+			-webkit-transform: translate3d(0,0,0); /* smoothness */
+		}
+		.grid > div, .blink {
+			position: absolute;
+			width: 338px;
+			height: 165px;
+      -webkit-transition: all 0.3s ease-out;  
+      -moz-transition:    all 0.3s ease-out;  
+      -ms-transition:     all 0.3s ease-out;  
+      -o-transition:      all 0.3s ease-out; 
+      transition:         all 0.3s ease-out; 
+      cursor: pointer; 
+		}
+		.a {
+			left: 0;
+		}
+		.b {
+			left: 350px
+		}
+		.one {
+			top: 0;
+		}
+		.two {
+			top: 175px;
+		}
+		.a1 { background: url(img/a1.jpg) 0      0       no-repeat; }
+		.a2 { background: url(img/a2.jpg) 0      -175px  no-repeat; }
+		.b1 { background: url(img/b1.jpg) -350px 0       no-repeat; }
+		.b2 { background: url(img/b2.jpg) -350px -175px  no-repeat; }
+		
+		.grid > div.active {
+			width: 977px;
+			height: 506px;
+			top: 0;
+			left: 0;
+			background-position: 0 0;
+			z-index: 1;
+		}
+	
+		.blink {
+			background: white;
+			opacity: 0;
+			text-indent: -9999px;
+			z-index: -1;
+		}
+		.blink-one {
+			left: 700px;
+			top: 0;
+			-webkit-animation: flash 1s 3s 1 linear forwards;
+			-moz-animation: flash 1s 3s 1 linear forwards;
+			-ms-animation: flash 1s 3s 1 linear forwards;
+			-o-animation: flash 1s 3s 1 linear forwards;
+		}
+		.blink-two {
+			left: 350px;
+			top: 175px;
+			-webkit-animation: flash 1s 4.3s 1 linear forwards;
+			-moz-animation: flash 1s 4.3s 1 linear forwards;
+			-ms-animation: flash 1s 4.3s 1 linear forwards;
+			-o-animation: flash 1s 4.3s 1 linear forwards;
+		}
+		.blink-three {
+			left: 0;
+			top: 0;
+			-webkit-animation: flash 1s 5.8s 1 linear forwards;
+			-moz-animation: flash 1s 5.8s 1 linear forwards;
+			-ms-animation: flash 1s 5.8s 1 linear forwards;
+			-o-animation: flash 1s 5.8s 1 linear forwards;
+		}
+		
+		@-webkit-keyframes flash { 
+		  0%   { -webkit-transform: scale(1);   opacity: 0.8; }
+		  99%  { -webkit-transform: scale(1.6); opacity: 0;   }
+		  100% { z-index: -1; }
+		}
+		/* Firefox requires z-index to be declared in all keyframes */
+		@-moz-keyframes flash {
+		  0%   { -moz-transform: scale(1);   opacity: 0.8; z-index: 100; }
+		  99%  { -moz-transform: scale(1.6); opacity: 0;   z-index: 100; }
+		  100% { z-index: -1; }
+		}
+		@-ms-keyframes flash { 
+		  0%   { -ms-transform: scale(1);   opacity: 0.8; }
+		  99%  { -ms-transform: scale(1.6); opacity: 0;   }
+		  100% { z-index: -1; }
+		}
+		@-o-keyframes flash { 
+		  0%   { -o-transform: scale(1);   opacity: 0.8; }
+		  99%  { -o-transform: scale(1.6); opacity: 0;   }
+		  100% { z-index: -1; }
+		}
+	
+	</style>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script>
+		$(function() {
+			
+			$all = $(".grid > div");
+			
+			var zindex = 2;
+			
+			$all.click(function() {
+			
+				$(this)
+					.css("z-index", zindex)
+					.toggleClass("active");
+					
+				zindex++;
+			
+			});
+						
+		});
+	
+	</script>
+
+</head>
+
+<body>
+<header>
+    <section class="mb-5">
+        <div class="container-fluid mb-5">   
+                <div class="offset-4 col-s8-m5-l5 py-5 typewriter center">
+                    <h1 class="my-5">Az ismeretlen remekmű</h1>
+                </div>  
+        </div>
+    </section>
+</header> 
+    <div id="page-wrap" class="text-center">
+		<div class="grid ">
+			<div class="a one a1"></div>
+			<div class="a two a2"></div>
+			<div class="a three a3"></div>
+			
+			<div class="b one b1"></div>
+			<div class="b two b2"></div>
+            <div class="b three b3"></div>
+		</div>
+	</div>
+<section>
+    <div class="container-fluid mt-5">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="img/paris_25.jpg">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="layer paper">
+                        <p>Ezerhatszáztizenkettőben, egy fagyos decembervégi reggelen, egy széllelbélelt ruházatú fiatalember sétált fel és alá a párizsi Grands-Augustins utca egyik házának kapuja előtt. Sokáig tétovázott, mint a szerelmes, aki nem mer benyitni első kedveséhez, bármennyire könnyűvérű is a hölgy, de végül mégis átlépte a küszöböt és megkérdezte, hogy Frangois Porbus mester otthon van-e. A földszinten söpörgető öregasszony igennel válaszolt, így hát a fiatalember lassan fölment a lépcsőn, s fokról fokra megtorpant, mint valami újsütetű udvaronc, aki izgatottan várja, hogy milyen fogadtatásban részesül majd a királynál.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>    
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12 text2">
+            <p>Odafönt megállt a csigalépcső fordulóján és határozatlanul pillantott az ajtót díszítő groteszk koppantóra. Ez volna hát a műterem, s minden bizonnyal itt dolgozik IV. Henrik festője, akiről tudjuk, hogy Rubens elődje volt Medici Mária kegyeiben. A fiatalembert áthatotta az a mély érzés, amelytől alighanem valamennyi nagy művész szíve remegni kezd, ha ifjúsága és a művészet iránti szerelme teljében megérzi egy lángelme vagy egy remekmű közelségét. Kezdetben minden emberi érzelmet valami üde varázzsal olt be a nemes lelkesedés, amely egyre apad az időben, míg végül a boldogság puszta emlékké, a dicsőség pedig hazugsággá válik. E zsenge érzések közül semmi sem hasonlít annyira a szerelemhez, mint a kezdő művésznek vakmerő és félénk, bizonytalan hitekkel és biztos csüggedésekkel teljes ifjonti szenvedélye, az ifjú művészé, aki most kezdi megízlelni dicsőségre és fájdalomra hivatott pályájának édes gyötrelmeit. Aki üres zsebbel, bontakozó tehetséggel sohasem remegett meg a Mester előtt, annak szívéből mindig hiányozni fog egy húr, művéből egy megfoghatatlan ecsetvonás, valami érzés, valami költőiség. Vannak öntelt hetvenkedők, akik túlságosan bizakodva néznek a jövő elé, de az ilyeneket csak az ostobák látják tehetségesnek. Ezek szerint az ismeretlen fiatalemberben valódi képességek lakoztak, ha csakugyan a tehetség jelének tekintjük e kezdeti félénkséget, e meghatározhatatlan szemérmet, amelyet a dicsőségre hivatottak éppúgy elvesztenek művészetük gyakorlása közben, mint ahogy a szépasszonyok is elvesztik a magukét a kacérság porondján. Aki megszokja a diadalt, abban elalszik a kétely, s talán a szemérem sem más, mint valamiféle kétely. A kezdő művész e pillanatban oly erősen átérezte nyomorúságát és vakmerőségét, hogy talán sohasem nyit be a festőhöz, akinek IV. Henrik csodálatos arcképét köszönhetjük, ha a véletlen váratlanul meg nem segíti. </p>
+            </div>
+        </div>
+    </div>
+        <div class="container-fluid">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="img/img.svg">
+            <div class="row">
+                <div class="col s6 m6 l6">
+                    <div class="layer">
+                        <p>Egy aggastyán jött fel a lépcsőn. Látva különleges öltözetét, határozott és szigorú lépteit, a fiatalember arra következtetett, hogy a festő pártfogójával vagy barátjával áll szemben: félreállt tehát a fordulón, hogy helyet adjon neki, és kíváncsian szemügyre vegye. Úgy remélte, felfedezi rajta a művészek jóindulatát vagy a műbarátok szíves vonásait; ehelyett azonban az aggastyánról valami ördögi jelleg sugárzott, s különösen az a megfoghatatlan kifejezés, amely olyannyira lebilincseli a művészeket. Képzeljék el kopasz, domború homlokát, amely kicsiny, nyomott orra fölé hajlik: ez az orr tömpe, mint a Rabelais-é vagy a Szókrátészé; gúnyos szája csupa ránc; rövid, büszkén előretolt állán hegyesre nyírt, szürke szakáll; tengerzöld szemét mintha elhomályosítaná az öregség, de fehérjének gyöngyházszínű csillogása csak jobban kiemeli szembogarát, amely dühében vagy lelkesedésében néha delejes pillantásokat lövell. Arcát alaposan elfonnyasztották az évek fáradalmai, s még inkább a testet-lelket egyaránt felőrlő gondolatok. Pillái kihullottak és szemöldökének nyomai is alig látszanak már az egykori merész ívek helyén. Állítsák ezt a fejet egy satnya, erőtlen testre, vegyék körül egy ragyogásig fehérített gallérral, amely olyan csipkés, mint a halszedő kések, dobjanak végül súlyos aranyláncot az aggastyán fekete ujjasára, és hozzávetőleges képet nyernek e különös alakról, amely a lépcsőház gyér világosságában még valami fantasztikus színt is kapott. Mintha egy Rembrandt-kép járna némán és keret nélkül, a nagy festő jellegzetes, sötét légkörében.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer class="bg-black small text-center text-white-50">
+</footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/parallax.js"></script>
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="js/grayscale.min.js"></script>
+</body>
+</html>
